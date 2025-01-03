@@ -16,9 +16,13 @@
         <p>{{ $ninja->dojo->description }}</p>
     </div>
 
-    <form action="{{ route('ninjas.destroy', $ninja->id) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn my-4">Delete Nina</button>
-    </form>
+    <div class="flex gap-4">
+        <a href="{{ route('ninjas.edit', $ninja->id) }}" class="btn my-4">Edit Ninja</a>
+        
+        <form action="{{ route('ninjas.destroy', $ninja->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn my-4">Delete Ninja</button>
+        </form>
+    </div>
 </x-layout>
